@@ -1,0 +1,119 @@
+@import "./theme.scss";
+@import "./components.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  background-color: $primaryColor;
+}
+
+.caseStudy {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.caseStudy__header {
+  text-align: center;
+}
+
+.caseStudy__title {
+  margin-top: 12px;
+}
+
+.caseStudy__carousel {
+  margin-top: 12px;
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(
+      90deg,
+      rgba($color: $primaryColor, $alpha: 100) 0%,
+      rgba($color: $primaryColor, $alpha: 0) 100%
+    );
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(
+      90deg,
+      rgba($color: $primaryColor, $alpha: 0) 0%,
+      rgba($color: $primaryColor, $alpha: 100) 100%
+    );
+  }
+
+  & .caseStudy__card.swiper-slide {
+    width: 251px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+  }
+}
+
+.caseStudy__card__header {
+  display: flex;
+  gap: 10px;
+  height: 37px;
+  align-items: center;
+}
+
+.caseStudy__card_title {
+  display: inline-block;
+  font-family: "Recoleta";
+  font-weight: 500;
+  color: $black;
+  line-height: 23px;
+}
+
+.caseStudy__subTitle {
+  font-family: "Poppins";
+  font-weight: 300;
+  line-height: 18px;
+  font-size: 12px;
+  color: rgba($color: $black, $alpha: 0.3);
+}
+
+.caseStudy__card__image {
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.caseStudy__card__text {
+  font-family: "Poppins";
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.carouselControl {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+
+  .carouselControl__next {
+    transform: rotate(180deg);
+  }
+}

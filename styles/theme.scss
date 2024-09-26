@@ -1,0 +1,20 @@
+// Colors
+$primaryColor: #003e33;
+$secondaryColor: #dba14d;
+$white: #f8f3f0cc;
+$black: #0a0f09;
+$textColor: $white;
+
+// layout
+$containerSize: 1440px;
+$containerSpacing: 16px;
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,100&display=swap");
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("../assets/fonts/Recoleta-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

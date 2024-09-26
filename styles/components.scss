@@ -1,0 +1,57 @@
+@import "./theme.scss";
+
+// layout
+.container {
+  max-width: $containerSize;
+  margin: 0 auto;
+  padding: 0 $containerSpacing;
+}
+
+// typography
+h2.heading2 {
+  font-size: 28px;
+  line-height: 31.1px;
+  color: $textColor;
+}
+
+// buttons
+@mixin button-base($borderColor, $borderRadius) {
+  display: inline-flex;
+  background-color: $primaryColor;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: inherit;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $borderColor;
+  border-radius: $borderRadius;
+
+  &:hover {
+    background-color: lighter($primaryColor, 10%);
+  }
+
+  &:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  @include button-base($secondaryColor, 32px);
+  color: rgba($color: $textColor, $alpha: 0.8);
+}
+
+.btn-icon {
+  @include button-base(rgba($color: $white, $alpha: 0.4), 1000px);
+  color: rgba($color: $textColor, $alpha: 0.8);
+  width: 35px;
+  height: 35px;
+}
+
+// btn-sizes
+.btn--base {
+  height: 28px;
+  font-size: 13px;
+  padding: 0 16px;
+}
